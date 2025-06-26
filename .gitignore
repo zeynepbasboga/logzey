@@ -1,0 +1,26 @@
+# Terraform artifacts
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Python cache and virtualenv
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+
+# AWS package files
+lambda.zip
+
+# System files
+.DS_Store
+
+# Logs
+*.log
+
+# Local test files
+*.json
+
+
