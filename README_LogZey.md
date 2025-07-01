@@ -17,7 +17,9 @@ Built with AWS Lambda, API Gateway, SNS, and Terraform — LogZey detects suspic
 
 ## 🏗 Architecture
 
-> (Insert architecture.png here)
+> ## 🏗 Architecture
+
+![LogZey Architecture](assets/architecture.png)
 
 ---
 
