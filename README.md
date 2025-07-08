@@ -12,6 +12,7 @@ Built with AWS Lambda, API Gateway, SNS, and Terraform — LogZey detects suspic
 - 📬 Sends alert e-mails via Amazon SNS  
 - ⚙️ Fully deployable with Terraform  
 - ☁️ Serverless – No infrastructure to manage  
+- 🐳 Docker-compatible for local testing
 
 ---
 
@@ -35,14 +36,38 @@ cd logzey
 alert_email = "your-email@example.com"
 ```
 
-3. **Deploy with Terraform**
+### 3. Choose your deployment method
+
+#### 🔸 Option A: AWS Lambda (.zip deployment)
+
+Generate a Lambda-compatible `.zip` package with:
+
+```bash
+./build_lambda.sh
+```
+
+This script will:
+
+- Install required Python packages from `requirements.txt`
+- Bundle `handler.py` and dependencies
+- Create `lambda.zip` ready for upload
+
+Then deploy with Terraform:
+
 ```bash
 cd terraform-files
 terraform init
 terraform apply
 ```
 
-4. **Approve SNS subscription** from your email inbox
+Don’t forget to confirm the SNS subscription from your email inbox.
+
+#### 🔹 Option B: Run locally with Docker
+
+```bash
+docker build -t logzey .
+docker run --rm logzey
+```
 
 ---
 
@@ -87,6 +112,8 @@ This IP triggered 5+ failed login attempts in under 1 minute.
 - SNS  
 - Terraform  
 - Python 3.12  
+- External GeoIP API  
+- Optional: Docker
 
 ---
 
